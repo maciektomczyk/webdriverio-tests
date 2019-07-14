@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "*": [ "./*" ],
+            "specs/*": ["./specs/*"],
+            "pages/*": ["./pages/*"]
+        },
+        "types": ["@wdio/mocha-framework", "node", "chai", "@wdio/sync"]
+    },
+    "include": [
+        "./specs/**/*.ts", "./pages/**/*.ts"
+    ]
+}
