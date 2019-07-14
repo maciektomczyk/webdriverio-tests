@@ -1,15 +1,13 @@
-class LoginPage {
-    public get username() { return $('#username'); }
-    public get password() { return $('#password'); }
-    public get submitBtn() { return $('button[type="submit"]'); }
-    public get alert() { return $('#flash'); }
+import Page from './page'
 
-    public open(): void {
-        browser.url('/login');
-    }
+class LoginPage extends Page {
+    get username() { return $('#username'); }
+    get password() { return $('#password'); }
+    get submitBtn() { return $('button[type="submit"]'); }
+    get alert() { return $('#flash'); }
 
-    public submitForm(): void {
+    submitForm(): void {
         this.submitBtn.click();
     }
 }
-export default new LoginPage()
+export default new LoginPage('/login')

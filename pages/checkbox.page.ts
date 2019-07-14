@@ -1,12 +1,10 @@
-class CheckboxPage {
-    public get firstCheckbox() { return $$('#checkboxes input')[0]; }
-    public get secondCheckbox() { return $$('#checkboxes input')[1]; }
+import Page from './page'
 
-    public open(): void {
-        browser.url('/checkboxes')
-    }
+class CheckboxPage extends Page {
+    get firstCheckbox() { return $$('#checkboxes input')[0]; }
+    get secondCheckbox() { return $$('#checkboxes input')[1]; }
 
-    public ableToCheck(elem: WebdriverIO.Element): Promise<WebdriverIO.Element> {
+    ableToCheck(elem: WebdriverIO.Element): Promise<WebdriverIO.Element> {
         return new Promise((resolve, reject) => {
             if (!elem.isSelected()) {
                 resolve(elem)
@@ -16,4 +14,4 @@ class CheckboxPage {
         })
     }
 }
-export default new CheckboxPage()
+export default new CheckboxPage('/checkboxes')

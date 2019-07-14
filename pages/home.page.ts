@@ -1,5 +1,5 @@
 class HomePage {
-    public get title() { return $('h2'); }
-    public get logoutBtn() { return $('button[href="/logout"]'); }
+    get title() { return $('h2'); }
+    get logoutBtn() { return $('button[href="/logout"]'); }
 }
 export default new HomePage()
